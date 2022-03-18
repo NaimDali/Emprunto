@@ -67,11 +67,12 @@ export default function Trustus() {
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div class="feature-img">
-                <img class="img-fluid" src="img/about-2.jpg" alt=""></img>
-                <img class="img-fluid" src="img/about-1.jpg" alt=""></img>
-              </div>
+
+            <div
+              class="col-lg-6 wow fadeInUp feature-img"
+              data-wow-delay="0.1s"
+            >
+              <img class="img-fluid" src="img\contrat.jpg" alt=""></img>
             </div>
           </div>
         </div>

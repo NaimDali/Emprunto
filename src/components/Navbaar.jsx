@@ -9,10 +9,9 @@ export default function Navbaar() {
       >
         <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
           <h1 class="text-primary m-0">
-            <img class="me-3" src="img/icons/icon-1.png" alt="Icon"></img>
-            Arkitektur
+            <img class="me-3" src="img/icons/ET.png" alt="Icon"></img>
+            Empruntout
           </h1>
-          /
         </a>
         <button
           type="button"

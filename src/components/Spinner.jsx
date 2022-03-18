@@ -12,7 +12,7 @@ export default function Spinner() {
       ></div>
       <img
         class="position-absolute top-50 start-50 translate-middle"
-        src="img/icons/icon-1.png"
+        src="img/icons/ET.png"
         alt="Icon"
       ></img>
     </div>

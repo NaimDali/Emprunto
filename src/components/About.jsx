@@ -30,7 +30,7 @@ export default function About() {
               <div class="d-flex align-items-center mb-5">
                 <div class="d-flex flex-shrink-0 align-items-center justify-content-center border border-5 border-primary">
                   <h1 class="display-1 mb-n2" data-toggle="counter-up">
-                    25
+                    12
                   </h1>
                 </div>
                 <div class="ps-4">
