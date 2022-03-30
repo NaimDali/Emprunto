@@ -10,7 +10,7 @@ export default function Contactus() {
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
               <h4 class="section-title">Appointment</h4>
               <h1 class="display-5 mb-4">
-                Make An Appointment To Start Your Dream Project
+                Make An Appointment for any questions
               </h1>
               <p class="mb-4">
                 Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
@@ -25,7 +25,7 @@ export default function Contactus() {
                     </div>
                     <div class="ms-4">
                       <p class="mb-2">Call Us Now</p>
-                      <h3 class="mb-0">+012 345 6789</h3>
+                      <h3 class="mb-0">+216 71 789 456</h3>
                     </div>
                   </div>
                 </div>
@@ -36,7 +36,7 @@ export default function Contactus() {
                     </div>
                     <div class="ms-4">
                       <p class="mb-2">Mail Us Now</p>
-                      <h3 class="mb-0">info@example.com</h3>
+                      <h3 class="mb-0">Empruntout@contact.tn</h3>
                     </div>
                   </div>
                 </div>

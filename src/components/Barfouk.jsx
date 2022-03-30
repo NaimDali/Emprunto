@@ -8,23 +8,15 @@ export default function Barfouk() {
           <div class="col-lg-7 px-5 text-start">
             <div class="h-100 d-inline-flex align-items-center py-3 me-3">
               <a class="text-body px-2" href="tel:+0123456789">
-                <i class="fa fa-phone-alt text-primary me-2"></i>+012 345 6789
+                <i class="fa fa-phone-alt text-primary me-2"></i>+216 71 789 456
               </a>
               <a class="text-body px-2" href="mailto:info@example.com">
                 <i class="fa fa-envelope-open text-primary me-2"></i>
-                info@example.com
+                Empruntout@contact.tn
               </a>
             </div>
           </div>
           <div class="col-lg-5 px-5 text-end">
-            <div class="h-100 d-inline-flex align-items-center py-3 me-2">
-              <a class="text-body px-2" href="">
-                Terms
-              </a>
-              <a class="text-body px-2" href="">
-                Privacy
-              </a>
-            </div>
             <div class="h-100 d-inline-flex align-items-center">
               <a class="btn btn-sm-square btn-outline-body me-1" href="">
                 <i class="fab fa-facebook-f"></i>

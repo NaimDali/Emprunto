@@ -65,8 +65,11 @@ export default function Navbaar() {
               Contact
             </a>
           </div>
-          <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">
-            Appointment
+          <a
+            href="pages/Logged"
+            class="btn btn-primary py-2 px-4 d-none d-lg-block"
+          >
+            Login
           </a>
         </div>
       </nav>

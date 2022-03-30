@@ -1,4 +1,5 @@
 import React from "react";
+import Service from "./Service";
 
 export default function Services() {
   return (
@@ -15,106 +16,36 @@ export default function Services() {
             </h1>
           </div>
           <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="service-item d-flex position-relative text-center h-100">
-                <img class="bg-img" src="img/service-1.jpg" alt=""></img>
-                <div class="service-text p-5">
-                  <img class="mb-4" src="img/icons/icon-5.png" alt="Icon"></img>
-                  <h3 class="mb-3">Architecture</h3>
-                  <p class="mb-4">
-                    Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                    lorem sed diam stet diam sed stet.
-                  </p>
-                  <a class="btn" href="">
-                    <i class="fa fa-plus text-primary me-3"></i>Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="service-item d-flex position-relative text-center h-100">
-                <img class="bg-img" src="img/service-2.jpg" alt=""></img>
-                <div class="service-text p-5">
-                  <img class="mb-4" src="img/icons/icon-6.png" alt="Icon"></img>
-                  <h3 class="mb-3">3D Animation</h3>
-                  <p class="mb-4">
-                    Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                    lorem sed diam stet diam sed stet.
-                  </p>
-                  <a class="btn" href="">
-                    <i class="fa fa-plus text-primary me-3"></i>Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div class="service-item d-flex position-relative text-center h-100">
-                <img class="bg-img" src="img/service-3.jpg" alt=""></img>
-                <div class="service-text p-5">
-                  <img class="mb-4" src="img/icons/icon-7.png" alt="Icon"></img>
-                  <h3 class="mb-3">House Planning</h3>
-                  <p class="mb-4">
-                    Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                    lorem sed diam stet diam sed stet.
-                  </p>
-                  <a class="btn" href="">
-                    <i class="fa fa-plus text-primary me-3"></i>Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="service-item d-flex position-relative text-center h-100">
-                <img class="bg-img" src="img/service-4.jpg" alt=""></img>
-                <div class="service-text p-5">
-                  <img class="mb-4" src="img/icons/icon-8.png" alt="Icon"></img>
-                  <h3 class="mb-3">Interior Design</h3>
-                  <p class="mb-4">
-                    Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                    lorem sed diam stet diam sed stet.
-                  </p>
-                  <a class="btn" href="">
-                    <i class="fa fa-plus text-primary me-3"></i>Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="service-item d-flex position-relative text-center h-100">
-                <img class="bg-img" src="img/service-5.jpg" alt=""></img>
-                <div class="service-text p-5">
-                  <img class="mb-4" src="img/icons/icon-9.png" alt="Icon"></img>
-                  <h3 class="mb-3">Renovation</h3>
-                  <p class="mb-4">
-                    Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                    lorem sed diam stet diam sed stet.
-                  </p>
-                  <a class="btn" href="">
-                    <i class="fa fa-plus text-primary me-3"></i>Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div class="service-item d-flex position-relative text-center h-100">
-                <img class="bg-img" src="img/service-6.jpg" alt=""></img>
-                <div class="service-text p-5">
-                  <img
-                    class="mb-4"
-                    src="img/icons/icon-10.png"
-                    alt="Icon"
-                  ></img>
-                  <h3 class="mb-3">Construction</h3>
-                  <p class="mb-4">
-                    Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                    lorem sed diam stet diam sed stet.
-                  </p>
-                  <a class="btn" href="">
-                    <i class="fa fa-plus text-primary me-3"></i>Read More
-                  </a>
-                </div>
-              </div>
-            </div>
+            <Service
+              iconsource="img/icons/icon-5.png"
+              imgsource="img/service-1.jpg"
+              title="Architecture"
+              description="Rent your needs"
+            />
+            <Service
+              iconsource="img/icons/icon-5.png"
+              imgsource="img/service-1.jpg"
+              title="Architecture"
+              description="Rent your needs"
+            />
+            <Service
+              iconsource="img/icons/icon-5.png"
+              imgsource="img/service-1.jpg"
+              title="Architecture"
+              description="Rent your needs"
+            />
+            <Service
+              iconsource="img/icons/icon-5.png"
+              imgsource="img/service-1.jpg"
+              title="Architecture"
+              description="Rent your needs"
+            />
+            <Service
+              iconsource="img/icons/icon-5.png"
+              imgsource="img/service-1.jpg"
+              title="Architecture"
+              description="Rent your needs"
+            />
           </div>
         </div>
       </div>
