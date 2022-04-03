@@ -12,14 +12,15 @@ export default function Footer() {
             <div class="col-lg-4 col-md-6">
               <h3 class="text-light mb-4">Address</h3>
               <p class="mb-2">
-                <i class="fa fa-map-marker-alt text-primary me-3"></i>123
-                Street, New York, USA
+                <i class="fa fa-map-marker-alt text-primary me-3"></i>
+                Centre Urbain Nord BP، Tunis 1080, Tunisia
               </p>
               <p class="mb-2">
-                <i class="fa fa-phone-alt text-primary me-3"></i>+012 345 67890
+                <i class="fa fa-phone-alt text-primary me-3"></i>+216 71 789 456
               </p>
               <p class="mb-2">
-                <i class="fa fa-envelope text-primary me-3"></i>info@example.com
+                <i class="fa fa-envelope text-primary me-3"></i>
+                Empruntout@contact.tn
               </p>
               <div class="d-flex pt-2">
                 <a class="btn btn-square btn-outline-body me-1" href="">
