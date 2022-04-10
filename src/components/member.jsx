@@ -7,13 +7,10 @@ export default function Member(props) {
         <div class="position-relative">
           <img class="img-fluid" src={props.imgsource} alt=""></img>
           <div class="team-social text-center">
-            <a class="btn btn-square" href="">
+            <a class="btn btn-square" href={props.fb}>
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a class="btn btn-square" href="">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a class="btn btn-square" href="">
+            <a class="btn btn-square" href={props.insta}>
               <i class="fab fa-instagram"></i>
             </a>
           </div>
