@@ -9,9 +9,7 @@ export default function Service(props) {
           <img class="mb-4" src={props.iconsource} alt="Icon"></img>
           <h3 class="mb-3">{props.title}</h3>
           <p class="mb-4">{props.description}</p>
-          <a class="btn" href="">
-            <i class="fa fa-plus text-primary me-3"></i>Read More
-          </a>
+          <i class="fa fa-plus text-primary me-3"></i>Read More
         </div>
       </div>
     </div>
