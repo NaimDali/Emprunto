@@ -7,7 +7,6 @@ import Facts from "../components/Facts";
 import About from "../components/About";
 import Services from "../components/Services";
 import Trustus from "../components/Trustus";
-import Projects from "../components/Projects";
 import Team from "../components/Team";
 import Contactus from "../components/Contactus";
 import Footer from "../components/Footer";
@@ -23,7 +22,6 @@ export default function Home() {
       <About />
       <Services />
       <Trustus />
-      <Projects />
       <Team />
       <Contactus />
       <Footer />

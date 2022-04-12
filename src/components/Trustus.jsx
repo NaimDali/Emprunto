@@ -25,7 +25,7 @@ export default function Trustus() {
                       alt="Icon"
                     ></img>
                     <div class="ms-4">
-                      <h3>Design Approach</h3>
+                      <h3>Design </h3>
                       <p class="mb-0">
                         Erat ipsum justo amet duo et elitr dolor, est duo duo
                         eos lorem sed diam stet diam sed stet.
@@ -57,7 +57,7 @@ export default function Trustus() {
                       alt="Icon"
                     ></img>
                     <div class="ms-4">
-                      <h3>Project Management</h3>
+                      <h3> Management between persons </h3>
                       <p class="mb-0">
                         Erat ipsum justo amet duo et elitr dolor, est duo duo
                         eos lorem sed diam stet diam sed stet.
