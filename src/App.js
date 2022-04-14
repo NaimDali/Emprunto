@@ -13,6 +13,7 @@ function App() {
         <Route exact path="/login" name="Login Page" element={<Login />} />
         <Route exact path="/home" name="home page" element={<Logged />} />
         <Route path="/profile/:id" name="user profile" element={<Profile />} />
+        <Route path="/produit/:id" name="page produit" element={<Product />} />
       </Routes>
     </Router>
   );
