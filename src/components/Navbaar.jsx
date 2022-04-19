@@ -26,7 +26,7 @@ export default function Navbaar() {
             <a href="/" class="nav-item nav-link active">
               Home
             </a>
-            <a href="about.html" class="nav-item nav-link">
+            <a href="/about" class="nav-item nav-link">
               About
             </a>
           </div>
