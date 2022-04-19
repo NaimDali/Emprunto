@@ -23,7 +23,7 @@ export default function Navbaar() {
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="/" class="nav-item nav-link active">
+            <a href="/" class="nav-item nav-link ">
               Home
             </a>
             <a href="/about" class="nav-item nav-link">
