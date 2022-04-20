@@ -1,8 +1,12 @@
 import { useState } from "react";
-import axios from "axios";
-import UserCard from "../components/UserCard";
-import CommentField from "../components/CommentField";
 import Comments from "../components/Comments";
+import Person from "../components/Person";
+import Portfolio from "../components/Portfolio";
+import ContactPerson from "../components/ContactPerson";
+import Spinner from "../components/Spinner";
+import Barfouk from "../components/Barfouk";
+import Navbaar from "../components/Navbaar";
+import Footer from "../components/Footer";
 
 export default function Profile({ id }) {
   const [user, setUser] = useState({
@@ -17,11 +21,15 @@ export default function Profile({ id }) {
     .then((response) => setUser(response.data));*/
   //MAKE COMMENTFIELD RENDER ONLY WHEN USER IS LOGGED IN.
   return (
-    <>
-      <UserCard user={user} />
-      <CommentField id={id} />
-      <br />
+    <div>
+      <Spinner />
+      <Barfouk />
+      <Navbaar />
+      <Person user={user} />
+      <Portfolio />
+      <ContactPerson id={id} />
       <Comments id={id} />
-    </>
+      <Footer />
+    </div>
   );
 }
