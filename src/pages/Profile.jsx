@@ -13,7 +13,8 @@ export default function Profile({ id }) {
     name: { first: "Hedi", last: "Khemiri" },
     location: { city: "Soukra", state: "Ariana" },
     phone: "95206781",
-    picture: "",
+    picture: "img/hedi.jpg",
+    rating: 84,
   });
   /*axios
     .get(process.env.API_ROUTE, { id: id })

@@ -6,24 +6,17 @@ export default function Person({ user }) {
   };
   return (
     <div class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-      <div className="col-md-4 animated fadeIn" key={user.id}>
+      <div className="col-6 animated fadeIn" key={user.id}>
         <div class="my-auto">
-          <img src={user.picture} class="img-fluid mb-3" alt=""></img>
           <h1 class="mb-0">
             {uppercase(user.name.first) + " " + uppercase(user.name.last)}
           </h1>
-          <p className="card-text">
-            {user.location.city + ", " + uppercase(user.location.state)}
-            <br />
-            <span className="phone">{user.phone}</span>
-          </p>
+
           <h2>
-            <span class="counter"> 84 </span>
+            <span class="counter"> {user.rating} </span>
             <span>%</span>
           </h2>
-          <p class="mb-5">
-            Sociable person, living in the capital Tunis, Tunisia.
-          </p>
+          <p class="mb-1">Sociable person who likes to meet new people :) </p>
 
           <div class="resume-section p-3 p-lg-5 d-flex flex-column">
             <div class="row my-auto" id="contact">
@@ -96,6 +89,9 @@ export default function Person({ user }) {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="col-6 animated fadeIn">
+        <img src={user.picture} class="img-fluid mb-6" width="400px"></img>
       </div>
     </div>
   );
