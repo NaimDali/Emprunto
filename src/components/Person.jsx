@@ -21,7 +21,9 @@ export default function Person({ user }) {
             <span class="counter"> 84 </span>
             <span>%</span>
           </h2>
-          <p class="mb-5">biioooooo</p>
+          <p class="mb-5">
+            Sociable person, living in the capital Tunis, Tunisia.
+          </p>
 
           <div class="resume-section p-3 p-lg-5 d-flex flex-column">
             <div class="row my-auto" id="contact">
@@ -31,13 +33,17 @@ export default function Person({ user }) {
                     <h3>
                       <i class="fa fa-map-marker cl-atlantis fa-2x"></i> Address
                     </h3>
-                    <p>25, Dist town Street, Logn California, US </p>
+                    <p>
+                      {user.location.city +
+                        ", " +
+                        uppercase(user.location.state)}
+                    </p>
                   </div>
                   <div class="contact-phone contact-side-desc contact-box-desc">
                     <h3>
                       <i class="fa fa-phone cl-atlantis fa-2x"></i> Phone
                     </h3>
-                    <p>800 123 3456 900 123 3457</p>
+                    <p>{user.phone}</p>
                   </div>
                   <div class="contact-mail contact-side-desc contact-box-desc">
                     <h3>

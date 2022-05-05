@@ -3,7 +3,6 @@ import Comments from "../components/Comments";
 import Person from "../components/Person";
 import Portfolio from "../components/Portfolio";
 import ContactPerson from "../components/ContactPerson";
-import Spinner from "../components/Spinner";
 import Barfouk from "../components/Barfouk";
 import Navbaar from "../components/Navbaar";
 import Footer from "../components/Footer";
@@ -22,7 +21,6 @@ export default function Profile({ id }) {
   //MAKE COMMENTFIELD RENDER ONLY WHEN USER IS LOGGED IN.
   return (
     <div>
-      <Spinner />
       <Barfouk />
       <Navbaar />
       <Person user={user} />
