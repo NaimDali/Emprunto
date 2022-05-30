@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import Product from "./components/Product";
 import Laptops from "./pages/Laptops";
+import SearchPage from "./pages/Search";
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
         <Route exact path="/about" name="home page" element={<Home />} />
         <Route path="/profile/:id" name="user profile" element={<Profile />} />
         <Route path="/produit/:id" name="page produit" element={<Product />} />
+        <Route
+          path="/recherche"
+          name="recherche produit"
+          element={<SearchPage />}
+        />
         <Route path="/laptops" name="laptops page" element={<Laptops />} />
       </Routes>
     </Router>

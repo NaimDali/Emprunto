@@ -6,8 +6,7 @@ export default function Laptops() {
   const [Product, setProduct] = useState({});
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/products/20")
+    fetch("http://localhost:4000/products/20")
       .then((res) => {
         console.log("******************************");
         console.log(res.data);

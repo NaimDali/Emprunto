@@ -1,18 +1,18 @@
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import ProductCard from "./ProductCard";
 export default function Search() {
   const [categories, setCategories] = useState([{}]);
   const [products, setProducts] = useState([{}]);
   useEffect(() => {
-    response = fetch(process.env.API_ROUTE + "/categories", { method: "GET" });
-    setCategories(response.data);
+    fetch("http://localhost:4000/categories", {
+      method: "GET",
+    }).then((res) => setCategories(res.data));
   });
   const categoryClickHandler = (event) => {
-    response = fetch(process.env.API_ROUTE + "/products/categories", {
+    fetch("http://localhost:4000/products/categories", {
       method: "GET",
       body: { name: event.target.value },
-    });
-    setProducts(response.data);
+    }).then((res) => setProducts(res.data));
   };
   return (
     <>
