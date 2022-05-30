@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Article from "../components/Article";
 
-export default function Laptops() {
+export default function Camping() {
   const [Products, setProducts] = useState([]);
+  const [Productsfiltred, setProductsfiltred] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/products")
@@ -11,6 +12,10 @@ export default function Laptops() {
       })
       .then((actualData) => {
         setProducts(actualData);
+        const filtrage = Products.filter((product) =>
+          product.Categories.includes("camping")
+        );
+        setProductsfiltred(filtrage);
       })
       .catch((err) => {
         console.log(err);
@@ -21,18 +26,18 @@ export default function Laptops() {
     <div class="section">
       <div class="container">
         <div class="row">
-          <h1>Best Prices </h1>
+          <h1>Camping </h1>
           <div class="col-md-12">
             <div class="row">
               <div class="products-tabs">
                 <div id="tab1" class="tab-pane active">
                   <div class="products-slick row">
                     {Products.map((Product) => (
-                      <div key={Product.id}>
+                      <div key={Productsfiltred.id}>
                         <Article
-                          sourceimg={Product.sourceimg}
-                          name={Product.name}
-                          price={Product.Price}
+                          sourceimg={Productsfiltred.sourceimg}
+                          name={Productsfiltred.name}
+                          price={Productsfiltred.Price}
                           category="category"
                         />
                       </div>
