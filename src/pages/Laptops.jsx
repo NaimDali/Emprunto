@@ -6,6 +6,7 @@ export default function Laptops() {
 
   useEffect(() => {
     fetch("http://localhost:3000/products")
+
       .then((response) => {
         return response.json();
       })
@@ -44,6 +45,7 @@ export default function Laptops() {
           </div>
         </div>
       </div>
+
     </div>
   );
 }

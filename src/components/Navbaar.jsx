@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 
 export default function Navbaar() {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.location.href = "/";
+  };
   return (
     <div>
       <nav
@@ -30,15 +36,38 @@ export default function Navbaar() {
               About
             </a>
           </div>
-          <a href="/Login" class="btn btn-primary py-2 px-4 d-none d-lg-block">
-            Login
-          </a>
-          <a
-            href="/signup"
-            class="btn btn-primary m-2 py-2 px-4 d-none d-lg-block"
-          >
-            Sign Up
-          </a>
+          {user ? (
+            <>
+              <a
+                href={"/profile/" + user.id}
+                class="btn btn-primary py-2 px-4 d-none d-lg-block"
+              >
+                Mon profile
+              </a>
+              <a
+                href=""
+                class="btn btn-primary py-2 px-4 d-none d-lg-block"
+                onClick={handleLogout}
+              >
+                Logout
+              </a>
+            </>
+          ) : (
+            <>
+              <a
+                href="/Login"
+                class="btn btn-primary py-2 px-4 d-none d-lg-block"
+              >
+                Login
+              </a>
+              <a
+                href="/signup"
+                class="btn btn-primary m-2 py-2 px-4 d-none d-lg-block"
+              >
+                Sign Up
+              </a>
+            </>
+          )}
         </div>
       </nav>
     </div>

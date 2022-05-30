@@ -16,7 +16,7 @@ En cas d'acceptation, nous procèderons a organiser la rencontre dont il y aura 
   useEffect(() => {
   fetch("http://localhost:4000/categories", {
   method: "GET",
-  }).then((res) => setCategories(res.data));
+  }).then((res) => return res.json()).then((actualData)=> setCategories(actualData));
   });
 ```
 
@@ -27,6 +27,6 @@ En cas d'acceptation, nous procèderons a organiser la rencontre dont il y aura 
   fetch("http://localhost:4000/products/categories", {
   method: "GET",
   body: { name: event.target.value },
-  }).then((res) => setProducts(res.data));
+  }).then((res) => return res.json()).then((actualData)=> setProduct(actualData));
   };
 ```
