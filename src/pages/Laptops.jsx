@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Article from "../components/Article";
 
 export default function Laptops() {
@@ -8,18 +8,25 @@ export default function Laptops() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.get(`https://localhost:3000/products/19`);
-        setData(response.data);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        setData(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getData();
-  }, []);
+    fetch("http://localhost:4000/products/20")
+      .then((res) => {
+        console.log("******************************");
+        console.log(res.data);
+        setProduct(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  return (
+    <div class="container">
+      <h2> product details: </h2>
+      <ul>
+        <li> id= {Product.id}</li>
+        <li> name= {Product.name}</li>
+        <li> username= {Product.Price}</li>
+      </ul>
+    </div>
+  );
 }

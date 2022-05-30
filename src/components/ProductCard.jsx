@@ -1,6 +1,5 @@
-import styles from "..styles/ProductCard.module.css";
-
 export default function ProductCard({ product }) {
+  const styles = {};
   return (
     <>
       <div className={styles["card"]} onClick="">
