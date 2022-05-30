@@ -8,6 +8,8 @@ import SignUp from "./pages/SignUp";
 import Product from "./components/Product";
 import Laptops from "./pages/Laptops";
 import SearchPage from "./pages/Search";
+
+import Camping from "./pages/Camping";
 import AjoutProduit from "./pages/AjoutProduit";
 
 function App() {
@@ -30,10 +32,18 @@ function App() {
           element={<SearchPage />}
         />
         <Route path="/laptops" name="laptops page" element={<Laptops />} />
+
         <Route
           path="/produit/add"
           name="ajouter produit"
           element={<AjoutProduit />}
+
+        <Route path="/Camping" name="Camping page" element={<Camping />} />
+        <Route
+          path="/ajouterproduitform"
+          name="formulaire ajouter produit"
+          element={<FormAddProduct />}
+
         />
       </Routes>
     </Router>

@@ -69,6 +69,9 @@ export default function Portfolio() {
           </a>
         </div>
       </div>
+      <button type="submit" class="btn btn-primary">
+        <a href="/ajouterproduitform"> Ajouter un produit</a>
+      </button>
     </div>
   );
 }
