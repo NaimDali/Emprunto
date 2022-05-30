@@ -11,15 +11,22 @@ En cas d'acceptation, nous procèderons a organiser la rencontre dont il y aura 
 ### Example
 
 - Here we fetch on load of the page.
+
+```
   useEffect(() => {
   fetch("http://localhost:4000/categories", {
   method: "GET",
   }).then((res) => setCategories(res.data));
   });
+```
+
 - Here we fetch on a certain event.
+
+```
   const categoryClickHandler = (event) => {
   fetch("http://localhost:4000/products/categories", {
   method: "GET",
   body: { name: event.target.value },
   }).then((res) => setProducts(res.data));
   };
+```
