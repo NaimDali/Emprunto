@@ -6,16 +6,17 @@ export default function Laptops() {
   const [Product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:4000/products/20")
-      .then((res) => {
-        console.log("******************************");
-        console.log(res.data);
-        setProduct(res.data);
+    fetch("http://localhost:4000/products/1")
+      .then((response) => {
+        return response.json();
+      })
+      .then((actualData) => {
+        setProduct(actualData);
       })
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
 
   return (
     <div class="container">
@@ -23,7 +24,7 @@ export default function Laptops() {
       <ul>
         <li> id= {Product.id}</li>
         <li> name= {Product.name}</li>
-        <li> username= {Product.Price}</li>
+        <li> username= {Product.price}</li>
       </ul>
     </div>
   );

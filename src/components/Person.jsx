@@ -9,11 +9,11 @@ export default function Person({ user }) {
       <div className="col-6 animated fadeIn" key={user.id}>
         <div class="my-auto">
           <h1 class="mb-0">
-            {uppercase(user.name.first) + " " + uppercase(user.name.last)}
+            {uppercase(user.firstname) + " " + uppercase(user.lastname)}
           </h1>
 
           <h2>
-            <span class="counter"> {user.rating} </span>
+            <span class="counter"> {/*user.rating*/} </span>
             <span>%</span>
           </h2>
           <p class="mb-1">Sociable person who likes to meet new people :) </p>
@@ -26,17 +26,13 @@ export default function Person({ user }) {
                     <h3>
                       <i class="fa fa-map-marker cl-atlantis fa-2x"></i> Address
                     </h3>
-                    <p>
-                      {user.location.city +
-                        ", " +
-                        uppercase(user.location.state)}
-                    </p>
+                    <p>{user.location + ", " + uppercase(user.location)}</p>
                   </div>
                   <div class="contact-phone contact-side-desc contact-box-desc">
                     <h3>
                       <i class="fa fa-phone cl-atlantis fa-2x"></i> Phone
                     </h3>
-                    <p>{user.phone}</p>
+                    <p></p>
                   </div>
                   <div class="contact-mail contact-side-desc contact-box-desc">
                     <h3>
@@ -44,8 +40,8 @@ export default function Person({ user }) {
                     </h3>
                     <address class="address-details-f">
                       Fax: 800 123 3456 Email:{" "}
-                      <a href="mailto:info@themsbit.com" class="">
-                        info@themsbit.com
+                      <a href={"mailto:" + user.email} class="">
+                        {user.email}
                       </a>
                     </address>
                   </div>
@@ -91,7 +87,8 @@ export default function Person({ user }) {
         </div>
       </div>
       <div className="col-6 animated fadeIn">
-        <img src={user.picture} class="img-fluid mb-6" width="400px"></img>
+        {/*
+        <img src={user.picture} class="img-fluid mb-6" width="400px"></img>*/}
       </div>
     </div>
   );

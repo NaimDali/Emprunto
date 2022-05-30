@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp";
 import Product from "./components/Product";
 import Laptops from "./pages/Laptops";
 import SearchPage from "./pages/Search";
+import AjoutProduit from "./pages/AjoutProduit";
 
 function App() {
   return (
@@ -17,7 +18,11 @@ function App() {
         <Route exact path="/login" name="Login Page" element={<Login />} />
         <Route exact path="/signup" name="sign up Page" element={<SignUp />} />
         <Route exact path="/about" name="home page" element={<Home />} />
-        <Route path="/profile/:id" name="user profile" element={<Profile />} />
+        <Route
+          path="/profile/:id"
+          name="user profile"
+          element={<Profile />}
+        ></Route>
         <Route path="/produit/:id" name="page produit" element={<Product />} />
         <Route
           path="/recherche"
@@ -25,6 +30,11 @@ function App() {
           element={<SearchPage />}
         />
         <Route path="/laptops" name="laptops page" element={<Laptops />} />
+        <Route
+          path="/produit/add"
+          name="ajouter produit"
+          element={<AjoutProduit />}
+        />
       </Routes>
     </Router>
   );

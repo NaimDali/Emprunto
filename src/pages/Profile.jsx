@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Comments from "../components/Comments";
 import Person from "../components/Person";
 import Portfolio from "../components/Portfolio";
@@ -6,29 +6,39 @@ import ContactPerson from "../components/ContactPerson";
 import Barfouk from "../components/Barfouk";
 import Navbaar from "../components/Navbaar";
 import Footer from "../components/Footer";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
-export default function Profile({ id }) {
-  const [user, setUser] = useState({
-    id: 1,
-    name: { first: "Hedi", last: "Khemiri" },
-    location: { city: "Soukra", state: "Ariana" },
-    phone: "95206781",
-    picture: "img/hedi.jpg",
-    rating: 84,
-  });
-  /*axios
-    .get(process.env.API_ROUTE, { id: id })
-    .then((response) => setUser(response.data));*/
-  //MAKE COMMENTFIELD RENDER ONLY WHEN USER IS LOGGED IN.
+export default function Profile() {
+  const { id } = useParams();
+  const user = JSON.parse(localStorage.getItem("user"));
+  const [visitedUser, setVisitedUser] = useState({});
+  const [showComments, setShowComments] = useState(false);
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const { data } = await axios.get(`https://localhost:4000/users/${id}`);
+        setVisitedUser(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetch();
+  }, []);
+
   return (
     <div>
       <Barfouk />
       <Navbaar />
-      <Person user={user} />
+      <Person user={visitedUser} />
       <Portfolio />
-      <ContactPerson id={id} />
-      <Comments id={id} />
+      {showComments && <ContactPerson id={visitedUser.id} />}
+      <Comments id={visitedUser.id} />
       <Footer />
     </div>
   );
+  /*axios
+    .get(process.env.API_ROUTE, { id: id })
+    .then((response) => setUser(response.data));*/
+  //MAKE COMMENTFIELD RENDER ONLY WHEN USER IS LOGGED IN.
 }
