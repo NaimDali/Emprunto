@@ -1,32 +1,25 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Article from "../components/Article";
 
 export default function Laptops() {
-  const [Product, setProduct] = useState({});
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const getProduct = () => {
-    axios
-      .get("https://localhost:3000/products/20")
-      .then((res) => {
-        console.log("******************************");
-        console.log(res.data);
-        setProduct(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  return (
-    <div class="container">
-      <h2> product details: </h2>
-      {getProduct()}
-      <ul>
-        <li> id= {Product.id}</li>
-        <li> name= {Product.name}</li>
-        <li> username= {Product.Price}</li>
-      </ul>
-    </div>
-  );
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(`https://localhost:3000/products/19`);
+        setData(response.data);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
 }
