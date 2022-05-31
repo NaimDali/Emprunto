@@ -1722,6 +1722,7 @@ textarea.input {
 
 .products-tabs > .tab-pane {
   display: block;
+
   height: 0;
   opacity: 0;
   visibility: hidden;
