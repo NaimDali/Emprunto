@@ -18,27 +18,27 @@ export default function ArticlesTab() {
                   <div class="products-slick row">
                     <Article
                       sourceimg="./img/product01.png"
-                      pourcentage="-30%"
-                      newprice="$980.00"
-                      oldprice="$990.00"
+                      Category="category"
+                      name="pc"
+                      price="$990.00"
                     />
                     <Article
                       sourceimg="./img/product02.png"
-                      pourcentage="-30%"
-                      newprice="$980.00"
-                      oldprice="$990.00"
+                      Category="category"
+                      name="pc"
+                      price="$990.00"
                     />
                     <Article
                       sourceimg="./img/product03.png"
-                      pourcentage="-30%"
-                      newprice="$980.00"
-                      oldprice="$990.00"
+                      price="$990.00"
+                      Category="category"
+                      name="pc"
                     />
                     <Article
                       sourceimg="./img/product04.png"
-                      pourcentage="-30%"
-                      newprice="$980.00"
-                      oldprice="$990.00"
+                      price="$980.00"
+                      Category="category"
+                      name="pc"
                     />
                   </div>
                   <div id="slick-nav-1" class="productsslicknav"></div>

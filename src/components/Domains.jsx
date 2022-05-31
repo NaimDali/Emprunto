@@ -9,17 +9,17 @@ export default function Domains() {
           <Domain
             srccode="laptops"
             title="Laptop Collection"
-            sourceimg="./img/shop01.png"
+            sourceimg="./img/electronics.png"
           />
           <Domain
-            srccode="cameras"
-            title="Cameras Collection"
-            sourceimg="./img/shop02.png"
+            srccode="Camping"
+            title="Camping items"
+            sourceimg="./img/camping.png"
           />
           <Domain
-            title="Accessories Collection"
+            title="Sport collection"
             srccode="accessories"
-            sourceimg="./img/shop03.png"
+            sourceimg="./img/sport.png"
           />
         </div>
       </div>
