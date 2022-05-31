@@ -8,7 +8,7 @@ export default function Article(props) {
           <img src={props.sourceimg} alt=""></img>
         </div>
         <div class="product-body">
-          <p class="product-category">{props.Category}</p>
+          <p class="product-category">{props.category}</p>
           <h3 class="product-name">
             <div>{props.name}</div>
           </h3>

@@ -1,54 +1,55 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Article from "../components/Article";
 
 export default function Camping() {
   const [Products, setProducts] = useState([]);
+  const [Loading, setLoading] = useState(true);
   const [Productsfiltred, setProductsfiltred] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/products")
-      .then((response) => {
-        return response.json();
-      })
-      .then((actualData) => {
-        setProducts(actualData);
-        const filtrage = Products.filter((product) =>
-          product.Categories.includes("camping")
-        );
-        setProductsfiltred(filtrage);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  useEffect(async () => {
+    const response = await axios.get("http://localhost:4000/products");
+
+    setProducts(response.data);
+    const filtrage = Products.filter(
+      (product) => product.categories == "camping"
+    );
+    setProductsfiltred(filtrage);
+    setLoading(false);
+  }, [Products]);
 
   return (
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <h1>Camping </h1>
-          <div class="col-md-12">
+    <>
+      {Loading ? (
+        <h1>Loading ...</h1>
+      ) : (
+        <div class="section">
+          <div class="container">
             <div class="row">
-              <div class="products-tabs">
-                <div id="tab1" class="tab-pane active">
-                  <div class="products-slick row">
-                    {Products.map((Product) => (
-                      <div key={Productsfiltred.id}>
-                        <Article
-                          sourceimg={Productsfiltred.sourceimg}
-                          name={Productsfiltred.name}
-                          price={Productsfiltred.Price}
-                          category="category"
-                        />
+              <h1>Camping </h1>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="products-tabs">
+                    <div id="tab1" class="tab-pane active">
+                      <div class="products-slick row">
+                        {Productsfiltred.map((Product) => (
+                          <Article
+                            key={Product.id}
+                            sourceimg={Product.sourceimg}
+                            name={Product.name}
+                            price={Product.price}
+                            category="Camping"
+                          />
+                        ))}
                       </div>
-                    ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }

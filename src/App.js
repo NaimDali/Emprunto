@@ -8,10 +8,14 @@ import SignUp from "./pages/SignUp";
 import Product from "./components/Product";
 import Laptops from "./pages/Laptops";
 import SearchPage from "./pages/Search";
-
 import Camping from "./pages/Camping";
+
 import AjoutProduit from "./pages/AjoutProduit";
 import GestionProfile from "./pages/GestionProfile";
+
+import FormAddProduct from "./pages/FormAddProduct";
+import Sport from "./pages/Sport";
+
 
 function App() {
   return (
@@ -37,20 +41,18 @@ function App() {
         <Route
           path="/produit/add"
           name="ajouter produit"
-          element={<AjoutProduit />}
-
-        <Route path="/Camping" name="Camping page" element={<Camping />} />
-        <Route
-          path="/ajouterproduitform"
-          name="formulaire ajouter produit"
           element={<FormAddProduct />}
-
         />
+
         <Route
           path="/profile/avatar"
           name="upload avatar"
           element={<GestionProfile />}
         ></Route>
+
+        <Route path="/camping" name="Camping page" element={<Camping />} />
+        <Route path="/sport" name="sport page" element={<Sport />} />
+
       </Routes>
     </Router>
   );

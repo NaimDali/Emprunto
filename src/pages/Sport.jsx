@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Article from "../components/Article";
 
-export default function Laptops() {
+export default function Sport() {
   const [Products, setProducts] = useState([]);
   const [Loading, setLoading] = useState(true);
   const [Productsfiltred, setProductsfiltred] = useState([]);
@@ -12,7 +12,7 @@ export default function Laptops() {
 
     setProducts(response.data);
     const filtrage = Products.filter(
-      (product) => product.categories == "electronics"
+      (product) => product.categories == "sport"
     );
     setProductsfiltred(filtrage);
     setLoading(false);
@@ -38,7 +38,7 @@ export default function Laptops() {
                             sourceimg={Product.sourceimg}
                             name={Product.name}
                             price={Product.price}
-                            category="Electronics"
+                            category="Sport"
                           />
                         ))}
                       </div>
