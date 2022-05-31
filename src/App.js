@@ -9,6 +9,7 @@ import Product from "./components/Product";
 import Laptops from "./pages/Laptops";
 import SearchPage from "./pages/Search";
 import AjoutProduit from "./pages/AjoutProduit";
+import GestionProfile from "./pages/GestionProfile";
 
 function App() {
   return (
@@ -35,6 +36,11 @@ function App() {
           name="ajouter produit"
           element={<AjoutProduit />}
         />
+        <Route
+          path="/profile/avatar"
+          name="upload avatar"
+          element={<GestionProfile />}
+        ></Route>
       </Routes>
     </Router>
   );

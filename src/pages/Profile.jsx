@@ -13,24 +13,32 @@ export default function Profile() {
   const { id } = useParams();
   const user = JSON.parse(localStorage.getItem("user"));
   const [visitedUser, setVisitedUser] = useState({});
+  const [loading, setLoading] = useState(true);
   const [showComments, setShowComments] = useState(false);
   useEffect(() => {
     const fetch = async () => {
       try {
-        const { data } = await axios.get(`https://localhost:4000/users/${id}`);
+        const { data } = await axios.get(`http://localhost:4000/users/${id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
         setVisitedUser(data);
+        setLoading(false);
       } catch (err) {
         console.error(err);
       }
     };
     fetch();
   }, []);
+  useEffect(() => {
+    if (user.id != visitedUser.id) setShowComments(true);
+    else setShowComments(false);
+  }, [user.id, visitedUser.id]);
 
   return (
     <div>
       <Barfouk />
       <Navbaar />
-      <Person user={visitedUser} />
+      {loading ? <h1>Loading...</h1> : <Person user={visitedUser} />}
       <Portfolio />
       {showComments && <ContactPerson id={visitedUser.id} />}
       <Comments id={visitedUser.id} />

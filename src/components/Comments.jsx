@@ -6,7 +6,7 @@ export default function Comments({ id }) {
   const [message, setMessage] = useState("");
   useEffect(() => {
     axios
-      .get(process.env.API_ROUTE + "/comments", { id: id })
+      .get("http://localhost:4000" + "/comments", { id: id })
       .catch((err) =>
         setMessage("Erreur au cours du chargement des commentaires.")
       )
