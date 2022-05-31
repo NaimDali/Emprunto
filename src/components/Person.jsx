@@ -12,10 +12,6 @@ export default function Person({ user }) {
             {uppercase(user.firstname) + " " + uppercase(user.lastname)}
           </h1>
 
-          <h2>
-            <span class="counter"> {/*user.rating*/} </span>
-            <span>%</span>
-          </h2>
           <p class="mb-1">Sociable person who likes to meet new people :) </p>
 
           <div class="resume-section p-3 p-lg-5 d-flex flex-column">
