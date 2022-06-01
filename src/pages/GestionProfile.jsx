@@ -9,7 +9,9 @@ export default function GestionProfile() {
   const onFileUpload = () => {
     const formData = new FormData();
     formData.append("avatar", file, file.name);
-    console.log(axios.post("http://localhost:4000/users/upload", formData));
+    console.log(axios.post("http://localhost:4000/users/upload", formData, {headers: {
+      
+    }}));
   };
   return (
     <>
