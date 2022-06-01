@@ -10,6 +10,8 @@ export default function SignUp() {
     lastname: "",
     location: "",
     password: "",
+    bio: "",
+    sourceimg: "",
   });
   const [confirmState, setConfirmState] = useState({ email: "", password: "" });
   const [disabledState, setDisabledState] = useState(true);
@@ -130,6 +132,19 @@ export default function SignUp() {
               value={formState.username}
             />
           </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">
+              Biographie:
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              name="bio"
+              aria-describedby="emailHelp"
+              onChange={onChange}
+              value={formState.bio}
+            />
+          </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">
@@ -199,6 +214,19 @@ export default function SignUp() {
               type="text"
               class="form-control"
               name="location"
+              aria-describedby="emailHelp"
+              onChange={onChange}
+              value={formState.location}
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">
+              source image:
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              name="sourceimg"
               aria-describedby="emailHelp"
               onChange={onChange}
               value={formState.location}

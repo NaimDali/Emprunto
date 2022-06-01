@@ -78,6 +78,19 @@ export default function FormAddProduct() {
             </div>
 
             <div class="mb-3">
+              <label for="name" class="form-label">
+                Category du produit
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="categories"
+                value={formState.categories}
+                onChange={onCategorieChange}
+              ></input>
+            </div>
+
+            <div class="mb-3">
               <label for="price" class="form-label">
                 Prix
               </label>
@@ -111,19 +124,6 @@ export default function FormAddProduct() {
                 id="email"
                 aria-describedby="emailHelp"
               ></input>
-            </div>
-            <div class="mb-3">
-              {categoriesIds.map((category) => (
-                <>
-                  <label for="categories">{category.name}</label>
-                  <input
-                    type="checkbox"
-                    id={category.name}
-                    value={formState.categories.includes(category.id)}
-                    onChange={onCategorieChange}
-                  ></input>
-                </>
-              ))}
             </div>
 
             <button type="submit" class="btn btn-primary">

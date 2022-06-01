@@ -40,7 +40,7 @@ export default function Navbaar() {
             <>
               <a
                 href={"/profile/" + user.id}
-                class="btn btn-primary py-2 px-4 d-none d-lg-block"
+                class="btn m-2 btn-primary py-2 px-4 d-none d-lg-block"
               >
                 Mon profile
               </a>

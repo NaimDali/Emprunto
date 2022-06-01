@@ -41,6 +41,15 @@ export default function Profile() {
       {loading ? <h1>Loading...</h1> : <Person user={visitedUser} />}
       <Portfolio />
       {showComments && <ContactPerson id={visitedUser.id} />}
+      <button type="button" class="navbar-toggler me-4">
+        <a
+          href="/produitadd"
+          class="btn btn-primary l-30 py-2 px-4 d-none d-lg-block"
+        >
+          Ajouter un produit
+        </a>
+      </button>
+
       <Comments id={visitedUser.id} />
       <Footer />
     </div>

@@ -10,10 +10,10 @@ export default function Facts() {
             <Fact
               imgsource="img/icons/icon-2.png"
               title="des produits variés"
-              description="il existe plusieurs produits dans différents domaines"
+              description="il existe plusieurs produits dans différents catégories"
             />
             <Fact
-              imgsource="img/icons/icon-4.png"
+              imgsource="img/icons/icon-1.png"
               title="Une communication facile"
               description="Un moyen de communication facile pour se reunir avec le propriétaire du produit"
             />

@@ -33,7 +33,7 @@ function App() {
         <Route path="/laptops" name="laptops page" element={<Laptops />} />
 
         <Route
-          path="/produit/add"
+          path="/produitadd"
           name="ajouter produit"
           element={<FormAddProduct />}
         />

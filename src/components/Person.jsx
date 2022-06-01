@@ -12,7 +12,7 @@ export default function Person({ user }) {
             {uppercase(user.firstname) + " " + uppercase(user.lastname)}
           </h1>
 
-          <p class="mb-1">Sociable person who likes to meet new people :) </p>
+          <p class="mb-1">{user.bio}</p>
 
           <div class="resume-section p-3 p-lg-5 d-flex flex-column">
             <div class="row my-auto" id="contact">
@@ -20,22 +20,16 @@ export default function Person({ user }) {
                 <div class="contact-cont2">
                   <div class="contact-add contact-box-desc">
                     <h3>
-                      <i class="fa fa-map-marker cl-atlantis fa-2x"></i> Address
+                      <i class="fa fa-map-marker cl-atlantis fa-2x"></i>
+                      Addresse
                     </h3>
-                    <p>{user.location + ", " + uppercase(user.location)}</p>
+                    <p>{user.location}</p>
                   </div>
                   <div class="contact-phone contact-side-desc contact-box-desc">
                     <h3>
-                      <i class="fa fa-phone cl-atlantis fa-2x"></i> Phone
-                    </h3>
-                    <p></p>
-                  </div>
-                  <div class="contact-mail contact-side-desc contact-box-desc">
-                    <h3>
-                      <i class="fa fa-envelope-o cl-atlantis fa-2x"></i> Email
+                      <i class="fa fa-phone cl-atlantis fa-2x"></i> Email
                     </h3>
                     <address class="address-details-f">
-                      Fax: 800 123 3456 Email:{" "}
                       <a href={"mailto:" + user.email} class="">
                         {user.email}
                       </a>
@@ -45,46 +39,10 @@ export default function Person({ user }) {
               </div>
             </div>
           </div>
-
-          <ul class="list-inline list-social-icons mb-0">
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
       <div className="col-6 animated fadeIn">
-        {/*
-        <img src={user.picture} class="img-fluid mb-6" width="400px"></img>*/}
+        {<img src={user.sourceimg} class="img-fluid m-20" width="400px"></img>}
       </div>
     </div>
   );
