@@ -6,53 +6,35 @@ export default function FormAddProduct() {
     name: "",
     price: 0,
     availability: false,
-    categories: [],
-  });
-  const [categoriesIds, setCategoriesIds] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/categories")
-      .then((response) => setCategoriesIds(response.data));
+    categories: "",
+    sourceimg: "",
   });
 
-  const onNameChange = (event) => {
-    setFormState((prev) => {
-      return { name: event.target.value, ...prev };
-    });
+  const onChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({ ...formState, [name]: value });
   };
-  const onAvailabiltyChange = (event) => {
-    setFormState((prev) => {
-      return { availabilty: event.target.value, ...prev };
-    });
-  };
-  const onPriceChange = (event) => {
-    setFormState((prev) => {
-      return { price: event.target.value, ...prev };
-    });
-  };
-  const onCategorieChange = (event) => {
-    if (event.target.value == true)
+  const onCategoryChange = (event) => {
+    if (event.target.id == "electronics")
       setFormState((prev) => {
-        let result = prev.categories.concat([
-          categoriesIds.find((element) => element == event.target.id),
-        ]);
-        return { categories: result, ...prev };
+        return { categories: "electronics", ...prev };
       });
-    else {
+    if (event.target.id == "camping")
       setFormState((prev) => {
-        let result = prev.categories.filter(
-          (element) =>
-            [element] ==
-            categoriesIds.find((element) => element == event.target.id)
-        );
-        return { categories: result, ...prev };
+        return { categories: "camping", ...prev };
       });
-    }
+    if (event.target.id == "sport")
+      setFormState((prev) => {
+        return { categories: "sport", ...prev };
+      });
   };
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    const response = axios.post("http://localhost:4000/products", formState);
+    const response = await axios.post(
+      "http://localhost:4000/products",
+      formState
+    );
+    window.location.href = "/";
   };
 
   return (
@@ -63,7 +45,11 @@ export default function FormAddProduct() {
         <div class="card col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
           <h1>ajouter les détails du produit</h1>
 
-          <form class=" wow fadeInUp" data-wow-delay="0.3s">
+          <form
+            class=" wow fadeInUp"
+            data-wow-delay="0.3s"
+            onSubmit={submitHandler}
+          >
             <div class="mb-3">
               <label for="name" class="form-label">
                 Nom du produit
@@ -72,22 +58,49 @@ export default function FormAddProduct() {
                 type="text"
                 class="form-control"
                 id="name"
+                name="name"
+                onChange={onChange}
                 value={formState.name}
-                onChange={onNameChange}
               ></input>
             </div>
 
             <div class="mb-3">
-              <label for="name" class="form-label">
-                Category du produit
+              <label for="category" class="form-label">
+                Categorie du produit
               </label>
-              <input
-                type="text"
-                class="form-control"
-                id="categories"
-                value={formState.categories}
-                onChange={onCategorieChange}
-              ></input>
+              <div class="mb-3">
+                <label for="electronics" class="form-label m-2">
+                  Electronique
+                </label>
+                <input
+                  type="checkbox"
+                  id="electronics"
+                  value={formState.categories == "electronics" ? true : false}
+                  onChange={onCategoryChange}
+                ></input>
+              </div>
+              <div class="mb-3">
+                <label for="camping" class="form-label m-2">
+                  Camping
+                </label>
+                <input
+                  type="checkbox"
+                  id="camping"
+                  value={formState.categories == "camping" ? true : false}
+                  onChange={onCategoryChange}
+                ></input>
+              </div>
+              <div class="mb-3">
+                <label for="sport" class="form-label m-2">
+                  Sport
+                </label>
+                <input
+                  type="checkbox"
+                  id="sport"
+                  value={formState.categories == "sport" ? true : false}
+                  onChange={onCategoryChange}
+                ></input>
+              </div>
             </div>
 
             <div class="mb-3">
@@ -98,8 +111,9 @@ export default function FormAddProduct() {
                 type="number"
                 class="form-control"
                 id="price"
+                name="price"
                 value={formState.price}
-                onChange={onPriceChange}
+                onChange={onChange}
               ></input>
             </div>
 
@@ -110,10 +124,12 @@ export default function FormAddProduct() {
               <input
                 type="checkbox"
                 id="availabilty"
+                name="availabilty"
                 value={formState.availability}
-                onChange={onAvailabiltyChange}
+                onChange={onChange}
               ></input>
             </div>
+
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">
                 source de votre image
@@ -121,8 +137,10 @@ export default function FormAddProduct() {
               <input
                 type="text"
                 class="form-control"
+                name="sourceimg"
                 id="email"
-                aria-describedby="emailHelp"
+                value={formState.sourceimg}
+                onChange={onChange}
               ></input>
             </div>
 

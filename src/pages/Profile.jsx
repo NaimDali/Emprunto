@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import Comments from "../components/Comments";
 import Person from "../components/Person";
 import Portfolio from "../components/Portfolio";
-import ContactPerson from "../components/ContactPerson";
 import Barfouk from "../components/Barfouk";
 import Navbaar from "../components/Navbaar";
 import Footer from "../components/Footer";
@@ -39,9 +37,7 @@ export default function Profile() {
       <Barfouk />
       <Navbaar />
       {loading ? <h1>Loading...</h1> : <Person user={visitedUser} />}
-      <Portfolio />
-      {showComments && <ContactPerson id={visitedUser.id} />}
-      <button type="button" class="navbar-toggler me-4">
+      <button type="button" class="navbar-toggler me-40">
         <a
           href="/produitadd"
           class="btn btn-primary l-30 py-2 px-4 d-none d-lg-block"
@@ -50,7 +46,8 @@ export default function Profile() {
         </a>
       </button>
 
-      <Comments id={visitedUser.id} />
+      <Portfolio />
+
       <Footer />
     </div>
   );

@@ -28,7 +28,7 @@ export default function ArticlesTab() {
               <div class="products-tabs">
                 <div id="tab1" class="tab-pane active">
                   <div class="products-slick row">
-                    {Products.slice(-9).map((Product) => (
+                    {Products.slice(-10).map((Product) => (
                       <Article
                         key={Product.id}
                         sourceimg={Product.sourceimg}
