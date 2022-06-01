@@ -46,7 +46,7 @@ export default function Profile() {
         </a>
       </button>
 
-      <Portfolio />
+      <Portfolio id={id} />
 
       <Footer />
     </div>

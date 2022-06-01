@@ -2,44 +2,52 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Article from "../components/Article";
 
-export default function Portfolio() {
+export default function Portfolio({ id }) {
   const [Products, setProducts] = useState([]);
-  const [Productsfiltred, setProductsfiltred] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(async () => {
-    const response = await axios.get("http://localhost:4000/products");
+    const response = await axios.get(
+      `http://localhost:4000/users/products/${id}`,
+      { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
+    );
 
     setProducts(response.data);
-    const filtrage = Products.filter((product) => product.ownerId == "3");
-    setProductsfiltred(filtrage);
-  }, []);
+    setLoading(false);
+  }, [Products]);
 
   return (
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <h1> Portfolio </h1>
-          <div class="col-md-12">
+    <>
+      {loading ? (
+        <h1>Loading ...</h1>
+      ) : (
+        <div class="section">
+          <div class="container">
             <div class="row">
-              <div class="products-tabs">
-                <div id="tab1" class="tab-pane active">
-                  <div class="products-slick row">
-                    {Productsfiltred.map((Product) => (
-                      <Article
-                        key={Product.id}
-                        sourceimg={Product.sourceimg}
-                        name={Product.name}
-                        price={Product.price}
-                        category={Product.category}
-                      />
-                    ))}
+              <h1> Portfolio </h1>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="products-tabs">
+                    <div id="tab1" class="tab-pane active">
+                      <div class="products-slick row">
+                        {Products.map((Product) => (
+                          <Article
+                            key={Product.id}
+                            sourceimg={Product.sourceimg}
+                            name={Product.name}
+                            price={Product.price}
+                            category={Product.category}
+                          />
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
