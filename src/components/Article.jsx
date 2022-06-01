@@ -16,7 +16,7 @@ export default function Article(props) {
         </div>
         <div class="add-to-cart">
           <button class="add-to-cart-btn">
-            <i class="fa fa-shopping-cart"></i> add to cart
+            <i class="fa fa-shopping-cart"></i> Emprunter
           </button>
         </div>
       </div>

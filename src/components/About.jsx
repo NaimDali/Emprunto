@@ -15,7 +15,7 @@ export default function About() {
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
               <h4 class="section-title">About Us</h4>
               <h1 class="display-5 mb-4">
-                A Creative Architecture Agency For Your Dream Home
+                une entreprise creative pour vos outils desirés
               </h1>
               <p>
                 Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
@@ -34,13 +34,13 @@ export default function About() {
                   </h1>
                 </div>
                 <div class="ps-4">
-                  <h3>Years</h3>
-                  <h3>Working</h3>
+                  <h3>ans</h3>
+                  <h3>de travail</h3>
                   <h3 class="mb-0">Experience</h3>
                 </div>
               </div>
-              <a class="btn btn-primary py-3 px-5" href="">
-                Read More
+              <a class="btn btn-primary py-3 px-5" href="/">
+                Consulter Page d'accueil
               </a>
             </div>
           </div>

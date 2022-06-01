@@ -5,8 +5,6 @@ import Navbaar from "../components/Navbaar";
 import Footer from "../components/Footer";
 import Domains from "../components/Domains";
 import ArticlesTab from "../components/ArticlesTab";
-import HotDeal from "../components/HotDeal";
-import Boutique from "../components/Boutique";
 
 export default function Home() {
   return (
@@ -16,8 +14,6 @@ export default function Home() {
       <Navbaar />
       <Domains />
       <ArticlesTab />
-      <HotDeal />
-      <Boutique />
       <Footer />
     </div>
   );

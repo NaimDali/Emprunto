@@ -11,10 +11,12 @@ import Footer from "../components/Footer";
 import AuthenticationContext from "../context/AuthenticationContext";
 
 export default function Home() {
-  const user = JSON.parse(localStorage.getItem("user"));
+  //const user = JSON.parse(localStorage.getItem("user"));
   return (
     <div>
-      {user && <h1>Hello {user.email}</h1>}
+      {
+        //user && <h1>Hello {user.email}</h1>
+      }
       <Spinner />
       <Barfouk />
       <Navbaar />

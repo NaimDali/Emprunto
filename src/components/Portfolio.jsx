@@ -1,99 +1,45 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Article from "../components/Article";
 
 export default function Portfolio() {
+  const [Products, setProducts] = useState([]);
+  const [Productsfiltred, setProductsfiltred] = useState([]);
+
+  useEffect(async () => {
+    const response = await axios.get("http://localhost:4000/products");
+
+    setProducts(response.data);
+    const filtrage = Products.filter((product) => product.ownerId == "3");
+    setProductsfiltred(filtrage);
+  }, []);
+
   return (
-    <div>
-      <div class="resume-section p-3 p-lg-5 d-flex flex-column" id="portfolio">
-        <div class="row my-auto">
-          <div class="col-12">
-            <h2 class="  text-center">Portfolio</h2>
-            <div class="mb-5 heading-border"></div>
-          </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <h1> Portfolio </h1>
           <div class="col-md-12">
-            <div class="port-head-cont">
-              <button
-                class="btn btn-general btn-green filter-b"
-                data-filter="all"
-              >
-                All
-              </button>
-              <button
-                class="btn btn-general btn-green filter-b"
-                data-filter="consulting"
-              >
-                Web Design
-              </button>
-              <button
-                class="btn btn-general btn-green filter-b"
-                data-filter="finance"
-              >
-                Mobile Apps
-              </button>
-              <button
-                class="btn btn-general btn-green filter-b"
-                data-filter="marketing"
-              >
-                Graphics Design
-              </button>
+            <div class="row">
+              <div class="products-tabs">
+                <div id="tab1" class="tab-pane active">
+                  <div class="products-slick row">
+                    {Productsfiltred.map((Product) => (
+                      <Article
+                        key={Product.id}
+                        sourceimg={Product.sourceimg}
+                        name={Product.name}
+                        price={Product.price}
+                        category={Product.category}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="row my-auto">
-          <div class="col-sm-4 portfolio-item filter finance">
-            <a class="portfolio-link" href="/" data-toggle="modal">
-              <img class="img-fluid" src="img/portfolio/p-4.jpg" alt=""></img>
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item filter marketing">
-            <a
-              class="portfolio-link"
-              href="#portfolioModal5"
-              data-toggle="modal"
-            >
-              <img class="img-fluid" src="img/portfolio/p-5.jpg" alt=""></img>
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item filter consulting">
-            <a
-              class="portfolio-link"
-              href="#portfolioModal6"
-              data-toggle="modal"
-            >
-              <img class="img-fluid" src="img/portfolio/p-6.jpg" alt=""></img>
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item filter consulting">
-            <a
-              class="portfolio-link"
-              href="#portfolioModal7"
-              data-toggle="modal"
-            >
-              <img class="img-fluid" src="img/portfolio/p-7.jpg" alt=""></img>
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item filter consulting">
-            <a
-              class="portfolio-link"
-              href="#portfolioModal8"
-              data-toggle="modal"
-            >
-              <img class="img-fluid" src="img/portfolio/p-8.jpg" alt=""></img>
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item filter finance">
-            <a
-              class="portfolio-link"
-              href="#portfolioModal9"
-              data-toggle="modal"
-            >
-              <img class="img-fluid" src="img/portfolio/p-9.jpg" alt=""></img>
-            </a>
-          </div>
-        </div>
       </div>
-      <button type="submit" class="btn btn-primary">
-        <a href="/ajouterproduitform"> Ajouter un produit</a>
-      </button>
     </div>
   );
 }

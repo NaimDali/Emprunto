@@ -1,47 +1,43 @@
-import React from "react";
+import { axios } from "axios";
+import React, { useState, useEffect } from "react";
 
 import Article from "./Article";
 
 export default function ArticlesTab() {
-  
+  const [Products, setProducts] = useState([]);
 
-
+  useEffect(() => {
+    fetch("http://localhost:4000/products")
+      .then((response) => {
+        return response.json();
+      })
+      .then((actualData) => {
+        setProducts(actualData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <div class="section">
       <div class="container">
         <div class="row">
-          <h1>Best Prices </h1>
+          <h1> les outils valables</h1>
           <div class="col-md-12">
             <div class="row">
               <div class="products-tabs">
                 <div id="tab1" class="tab-pane active">
                   <div class="products-slick row">
-                    <Article
-                      sourceimg="./img/product01.png"
-                      Category="category"
-                      name="pc"
-                      price="$990.00"
-                    />
-                    <Article
-                      sourceimg="./img/product02.png"
-                      Category="category"
-                      name="pc"
-                      price="$990.00"
-                    />
-                    <Article
-                      sourceimg="./img/product03.png"
-                      price="$990.00"
-                      Category="category"
-                      name="pc"
-                    />
-                    <Article
-                      sourceimg="./img/product04.png"
-                      price="$980.00"
-                      Category="category"
-                      name="pc"
-                    />
+                    {Products.slice(-9).map((Product) => (
+                      <Article
+                        key={Product.id}
+                        sourceimg={Product.sourceimg}
+                        name={Product.name}
+                        price={Product.price}
+                        category={Product.category}
+                      />
+                    ))}
                   </div>
-                  <div id="slick-nav-1" class="productsslicknav"></div>
                 </div>
               </div>
             </div>

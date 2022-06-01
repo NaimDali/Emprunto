@@ -26,7 +26,7 @@ export default function Sport() {
         <div class="section">
           <div class="container">
             <div class="row">
-              <h1>Electronis equipment </h1>
+              <h1> Collection de sport</h1>
               <div class="col-md-12">
                 <div class="row">
                   <div class="products-tabs">

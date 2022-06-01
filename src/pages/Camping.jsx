@@ -26,7 +26,7 @@ export default function Camping() {
         <div class="section">
           <div class="container">
             <div class="row">
-              <h1>Camping </h1>
+              <h1>outils de camping </h1>
               <div class="col-md-12">
                 <div class="row">
                   <div class="products-tabs">

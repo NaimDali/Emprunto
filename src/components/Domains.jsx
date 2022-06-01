@@ -8,18 +8,18 @@ export default function Domains() {
         <div class="row">
           <Domain
             srccode="laptops"
-            title="electronic equipment"
+            title="Equipment électronique"
             sourceimg="./img/electronics.png"
           />
           <Domain
             srccode="camping"
-            title="Camping items"
+            title="Outils de camping"
             sourceimg="./img/camping.png"
           />
           <Domain
-            title="Sport collection"
+            title="Collection sport"
             srccode="sport"
-            sourceimg="./img/sport.png"
+            sourceimg="./img/sport.jpg"
           />
         </div>
       </div>
